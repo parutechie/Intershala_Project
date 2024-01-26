@@ -47,7 +47,6 @@ def analyze_shifts(shifts):
 def main(input_file, output_file):
     shifts = {}
 
-    # Read Excel file using pandas
     df = pd.read_excel(input_file)
 
     for index, row in df.iterrows():
@@ -66,11 +65,9 @@ def main(input_file, output_file):
 
     unique_output = analyze_shifts(shifts)
 
-    # Print unique messages to console
     for line in unique_output:
         print(line)
 
-    # Write unique output to file
     with open(output_file, "w") as file:
         for line in unique_output:
             file.write(line + "\n")
